@@ -1,0 +1,6 @@
+---
+# vars file for aws-corretto
+corretto_base_url: "https://corretto.aws/downloads/resources"
+corretto_major_version: "8"
+corretto_minor_version: "275.01.1"
+corretto_platform: "linux-x64"
