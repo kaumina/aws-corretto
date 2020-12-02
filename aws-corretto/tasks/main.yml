@@ -20,10 +20,10 @@
     dest: /opt/java
     extra_opts: [--strip-components=1]
   
-- name:  clean downloaded archive file
-  file:
-   path: /tmp/amazon-corretto-{{ corretto_major_version }}.{{ corretto_minor_version }}-{{ corretto_platform }}.tar.gz
-   state: absent
+##- name:  clean downloaded archive file
+##  file:
+##   path: /tmp/amazon-corretto-{{ corretto_major_version }}.{{ corretto_minor_version }}-{{ corretto_platform }}.tar.gz
+##   state: absent
   
 ## create symlinks for AWS Corretto
 - name: create symlink for java
