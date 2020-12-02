@@ -7,7 +7,7 @@
   get_url:
     url: "{{ corretto_base_url }}/{{ corretto_major_version }}.{{ corretto_minor_version }}/amazon-corretto-{{ corretto_major_version }}.{{ corretto_minor_version }}-{{ corretto_platform }}.tar.gz"
     dest: /tmp/
-  when: "corretto_major_version > '8' and corretto_minor_version > '0'"
+  when: corretto_major_version > "8" and corretto_minor_version > "0"
 
 - name: create archive directory
   file:
