@@ -6,8 +6,7 @@
 - name: download tar from aws download
   get_url:
     url: "{{ corretto_base_url }}/{{ corretto_major_version }}.{{ corretto_minor_version }}/amazon-corretto-{{ corretto_major_version }}.{{ corretto_minor_version }}-{{ corretto_platform }}.tar.gz"
-    dest: /tmp/
-  when: corretto_major_version > "8" and corretto_minor_version > "0"
+    dest: /tmp/  
 
 - name: create archive directory
   file:
@@ -20,10 +19,10 @@
     dest: /opt/java
     extra_opts: [--strip-components=1]
   
-##- name:  clean downloaded archive file
-##  file:
-##   path: /tmp/amazon-corretto-{{ corretto_major_version }}.{{ corretto_minor_version }}-{{ corretto_platform }}.tar.gz
-##   state: absent
+- name:  clean downloaded archive file
+  file:
+   path: /tmp/amazon-corretto-{{ corretto_major_version }}.{{ corretto_minor_version }}-{{ corretto_platform }}.tar.gz
+   state: absent
   
 ## create symlinks for AWS Corretto
 - name: create symlink for java
@@ -32,12 +31,11 @@
     path: /opt/java/bin/java
     link: /usr/bin/java
     priority: 100
-  when: "corretto_major_version > '8' and corretto_minor_version > '0'"
-
+  
 - name: create symlink for javac
   alternatives:
     name: javac
     path: /opt/java/bin/javac
     link: /usr/bin/javac
     priority: 100
-  when: "corretto_major_version > '8' and corretto_minor_version > '0'"
+  
