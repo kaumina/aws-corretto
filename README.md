@@ -36,6 +36,3 @@ References
 -------
 Source : https://github.com/corretto/corretto-8/releases
 
-Author Information
-------------------
-TOSREPod4@grp.pearson.com
